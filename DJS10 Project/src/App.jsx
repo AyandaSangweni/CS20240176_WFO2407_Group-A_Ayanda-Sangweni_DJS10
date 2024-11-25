@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BlogList from "./BlogList";
+import ErrorMessage from "./ErrorMessage";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -20,7 +21,7 @@ function App() {
   return (
     <div>
       <h1>Blog Posts</h1>
-      {error ? <p>Error: {error}</p> : <BlogList posts={posts} />}
+      {error ? <ErrorMessage message={error} /> : <BlogList posts={posts} />}
     </div>
   );
 }
