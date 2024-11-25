@@ -7,10 +7,10 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholdger.typicode.com/posts")
+    fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to fetch posts.");
+          throw new Error("Failed to fetch posts. Please try again later.");
         }
         return response.json();
       })
@@ -21,7 +21,9 @@ function App() {
   return (
     <div>
       <h1>Blog Posts</h1>
-      {error ? <ErrorMessage message={error} /> : <BlogList posts={posts} />}
+      {error ? <ErrorMessage error={error} /> : <BlogList posts={posts} />}
     </div>
   );
-}
+};
+
+export default App; 
