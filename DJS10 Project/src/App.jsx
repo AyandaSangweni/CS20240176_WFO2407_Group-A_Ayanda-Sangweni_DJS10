@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import BlogList from "./BlogList";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -19,14 +20,7 @@ function App() {
   return (
     <div>
       <h1>Blog Posts</h1>
-      {error ? <p>Error: {error}</p> : posts.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </div>
-      ))}
+      {error ? <p>Error: {error}</p> : <BlogList posts={posts} />}
     </div>
   );
 }
-
-export default App;
