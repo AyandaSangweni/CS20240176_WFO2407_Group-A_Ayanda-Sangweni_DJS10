@@ -5,7 +5,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://jsonplaceholdger.typicode.com/posts")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch posts.");
